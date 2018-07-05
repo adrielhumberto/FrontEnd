@@ -1,0 +1,29 @@
+﻿<h1>Pratos</h1>
+
+<p *ngIf="!dishList"><em>Carregando...</em></p>
+
+<p>
+    <a [routerLink]="['/register-dish']"><button class="btn btn-primary">Cadastrar Novo Prato</button></a>
+</p>
+
+<table class='table' *ngIf="dishList">
+    <thead>
+        <tr>
+            <th>
+            <th>Restaurante</th>
+            <th>Prato</th>
+            <th>Preço</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let dish of dishList">
+            <td>
+                <a [routerLink]="" (click)="delete(dish.id)"><button class="btn btn-primary">Apagar</button></a>
+                <a [routerLink]="['/dish/edit/', dish.id]"><button class="btn btn-primary">Editar</button></a>
+            </td>
+            <td>{{ dish.restaurant.name }}</td>
+            <td>{{ dish.name }}</td>
+            <td>{{ dish.price }}</td>
+        </tr>
+    </tbody>
+</table> 

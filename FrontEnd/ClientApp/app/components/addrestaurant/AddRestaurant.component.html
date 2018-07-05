@@ -1,0 +1,18 @@
+﻿<h1>{{title}}</h1>
+<h3>Restaurante</h3>
+<hr />
+<form [formGroup]="restaurantForm" (ngSubmit)="save()" #formDir="ngForm" novalidate>
+    <div class="form-group row">
+        <label class=" control-label col-md-12">Nome</label>
+        <div class="col-md-4">
+            <input class="form-control" type="text" formControlName="name" required>
+        </div>
+        <span class="text-danger" *ngIf="name.invalid && formDir.submitted">
+            Nome é obrigatorio.
+        </span>
+    </div>
+    <div class="form-group">
+        <button class="btn" (click)="cancel()">Cancelar</button>
+        <button type="submit" class="btn btn-default">Salvar</button>
+    </div>
+</form>  

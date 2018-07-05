@@ -20,6 +20,26 @@
     <Content Remove="ClientApp\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="ClientApp\app\components\adddish\AddDish.component.ts" />
+    <None Remove="ClientApp\app\components\addrestaurant\AddRestaurant.component.ts" />
+    <None Remove="ClientApp\app\components\fetchdish\FetchDish.component.ts" />
+    <None Remove="ClientApp\app\components\fetchrestaurant\FetchRestaurant.component.ts" />
+    <None Remove="ClientApp\app\Pipe\SearchFilter.pipe.ts" />
+    <None Remove="ClientApp\app\Services\dishservice.service.ts" />
+    <None Remove="ClientApp\app\Services\restaurantservice.service.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\app\components\adddish\AddDish.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\addrestaurant\AddRestaurant.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\fetchdish\FetchDish.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\fetchrestaurant\FetchRestaurant.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Pipe\SearchFilter.pipe.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Services\dishservice.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Services\restaurantservice.service.ts" />
+  </ItemGroup>
+
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">
     <!-- Ensure Node.js is installed -->
     <Exec Command="node --version" ContinueOnError="true">

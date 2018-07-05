@@ -1,0 +1,28 @@
+﻿<h1>Restaurantes</h1>
+
+<p *ngIf="!restaurantList"><em>Carregando...</em></p>
+
+<input type="text" #listFilter (keyup)="0" placeholder="Buscar restaurantes"/>
+
+
+<a [routerLink]="['/register-restaurant']">
+    <button class="btn btn-primary">Cadastrar Novo Restaurante</button>
+</a>
+
+<table class='table' *ngIf="restaurantList">
+    <thead>
+        <tr>
+            <th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let restaurant of restaurantList | searchfilter: listFilter.value">
+            <td>
+                <a [routerLink]="" (click)="delete(restaurant.id)"><button class="btn btn-primary">Apagar</button></a>
+                <a [routerLink]="['/restaurant/edit/', restaurant.id]"><button class="btn btn-primary">Editar</button></a> |
+            </td>
+            <td>{{ restaurant.name }}</td>
+        </tr>
+    </tbody>
+</table>
